@@ -1,10 +1,10 @@
-# imropt random method from the library
+# import random method from the library
 import random
 
 # function to generate two digit number and multiply by 11 
 def two_digit_mul_by_11():
     # generate random two digit int
-    x = random.randint(11, 99)
+    x = random.randint(10, 99)
     # multiply int by 11
     y = x * 11
 
