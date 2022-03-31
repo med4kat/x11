@@ -1,0 +1,80 @@
+* {
+  /*border: dashed red !important;*/
+}
+
+body {
+  background: #F9F9ED;
+  font-family: sans-serif;
+}
+
+nav {
+  background: #D9DBF1;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.container-fluid {
+  height: 100%;
+  background: #F9F9ED;
+}
+
+.h1, .p {
+  color: #7D84B2 !important;
+}
+
+.navbar-brand {
+  color: #7D84B2 !important;
+}
+
+.progrees-bar-row {
+  margin-top: 50px;
+}
+
+.progress {
+  background-color: #D9DBF1;
+}
+
+.progress-bar{
+  background-color: #8E9DCC;
+}
+
+.math-task-row {
+  margin-top: 50px;
+}
+
+.multiplicant, .multiplier, .product {
+    font-weight: 400;
+    font-size: 82px;
+    line-height: 99px;
+    text-align: right;
+    color: #353951;
+}
+
+.equals-row {
+  display: flex;
+  justify-content: right;
+}
+
+.equals {
+  width: 200px;
+  height: 5px;
+  background-color: #353951;
+}
+
+#result {
+  color: #7D84B2;
+}
+
+#about, #how_it_works {
+    margin: calc(1.5em + 1vh) auto calc(0.75em + 0.5vh) auto;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
