@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Task from "./components/Task.jsx";
 
 function Home() {
   return (
@@ -34,10 +35,10 @@ function Home() {
             </div>
           </div>
         </div>
-
+        <Task />
         {/* <!--math-task--> */}
         {/* <!--FIX responsivenes is not working properly--> */}
-        <div className="row math-task-row">
+        {/* <div className="row math-task-row">
           <div className="col-md-6 offset-md-3 math">
             <div className="row">
               <div className="col-sm-4 offset-md-4  multiplicant">243</div>
@@ -59,7 +60,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
