@@ -46,25 +46,53 @@ main {
 
 .math-task-row {
   margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.math {
+  /*display: flex;
+  flex-flow: column;
+  position: relative;*/
+  font-size: calc(1.4rem + 2vh + 4vw);
+}
+
+.math-wrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.task-wrapper {
+  border-bottom: 0.1em solid #353951;
+}
+
+.numbers {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.task {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    padding: 0 0.2em;
+}
+
+.product-wrapper {
+    padding: 0 0.2em;
 }
 
 .multiplicant, .multiplier, .product {
-    font-weight: 400;
-    font-size: 82px;
-    line-height: 99px;
-    text-align: right;
+    display: flex;
+    align-items: flex-end;
     color: #353951;
 }
 
-.equals-row {
-  display: flex;
-  justify-content: right;
-}
-
-.equals {
-  width: 200px;
-  height: 5px;
-  background-color: #353951;
+.operator {
+  padding-right: 0.2em;
 }
 
 #result {
