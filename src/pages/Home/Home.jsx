@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Task from "./components/Task.jsx";
 
 function Home() {
+
   return (
     <main>
       {/* <!-- navbar --> */}
@@ -37,30 +38,28 @@ function Home() {
         </div>
         <Task />
         {/* <!--math-task--> */}
-        {/* <!--FIX responsivenes is not working properly--> */}
-        {/* <div className="row math-task-row">
-          <div className="col-md-6 offset-md-3 math">
-            <div className="row">
-              <div className="col-sm-4 offset-md-4  multiplicant">243</div>
-            </div>
+        <div className="row math-task-row">
+          <div className="math">
+            <div className="math-wrapper">
 
-            <div className="row">
-              <div className="col-sm-4 offset-md-4 multiplier">x 11</div>
-            </div>
+              <section className="task-wrapper">
+                <section className="task">
+                  <div className="operator">x</div>
 
-            <div className="row">
-              <div className="col-sm-4 offset-md-4 equals-row">
-                <div className="equals"></div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-sm-4 offset-md-4 product" id="result">
-                ?
-              </div>
+                  <div className="numbers">
+                    <div className="multiplicant">23</div> {/*col-sm-4 offset-md-4*/}
+                    <div className="multiplier">11</div> {/*col-sm -4 offset-md-4*/}
+                 </div>
+                </section>
+              </section>
+              <section className="product-wrapper">
+                <div className="product" id="result">?</div>
+              </section>
             </div>
           </div>
-        </div> */}
+
+
+          </div>
       </div>
     </main>
   );
