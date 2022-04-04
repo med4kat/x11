@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Task from "./components/Task.jsx";
 
 function Home() {
 
@@ -35,9 +36,8 @@ function Home() {
             </div>
           </div>
         </div>
-
+        <Task />
         {/* <!--math-task--> */}
-
         <div className="row math-task-row">
           <div className="math">
             <div className="math-wrapper">
