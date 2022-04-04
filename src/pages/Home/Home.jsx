@@ -36,27 +36,9 @@ function Home() {
             </div>
           </div>
         </div>
-        <Task />
         {/* <!--math-task--> */}
         <div className="row math-task-row">
-          <div className="math">
-            <div className="math-wrapper">
-
-              <section className="task-wrapper">
-                <section className="task">
-                  <div className="operator">x</div>
-
-                  <div className="numbers">
-                    <div className="multiplicant">23</div> {/*col-sm-4 offset-md-4*/}
-                    <div className="multiplier">11</div> {/*col-sm -4 offset-md-4*/}
-                 </div>
-                </section>
-              </section>
-              <section className="product-wrapper">
-                <div className="product" id="result">?</div>
-              </section>
-            </div>
-          </div>
+          <Task />
 
 
           </div>

@@ -60,36 +60,58 @@ function Task() {
       isCorrectAnswer: false,
     });
   }
-
   return (
-    <div className="col-md-6 offset-md-3 task" style={myStyle.task}>
-      <div className="row">
-        <div className="col-sm-4 offset-md-4 multiplicant">
-          {task.multiplicant ?? 0}
-        </div>
-      </div>
+    
+    <div className="math-wrapper">
 
-      <div className="row">
-        <div className="col-sm-4 offset-md-4 multiplier">
-          x {task.multiplier ?? 0}
-        </div>
-      </div>
+      <section className="task-wrapper">
+        <section className="task" style={myStyle.task}>
+          <div className="operator">x</div>
 
-      <div className="row">
-        <div className="col-sm-4 offset-md-4 equals-row">
-          <div className="equals"></div>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-sm-4 offset-md-4 product" id="result">
-          <input className="product-input" type="text" onChange={handleAnswer}>
-            {task.answer}
-          </input>
-        </div>
-      </div>
+          <div className="numbers">
+            <div className="multiplicant">{task.multiplicant ?? 0}</div> {/*col-sm-4 offset-md-4*/}
+            <div className="multiplier">{task.multiplier ?? 0}</div> {/*col-sm -4 offset-md-4*/}
+         </div>
+        </section>
+      </section>
+      <section className="product-wrapper">
+        {/* <div className="product" id="result">?</div> */}
+        <input className="product" id="result" type="text" onChange={handleAnswer}>
+          {task.answer}
+        </input>
+      </section>
     </div>
-  );
+
+  )
+  // return (
+  //   <div className="col-md-6 offset-md-3 task" style={myStyle.task}>
+  //     <div className="row">
+  //       <div className="col-sm-4 offset-md-4 multiplicant">
+  //         {task.multiplicant ?? 0}
+  //       </div>
+  //     </div>
+  //
+  //     <div className="row">
+  //       <div className="col-sm-4 offset-md-4 multiplier">
+  //         x {task.multiplier ?? 0}
+  //       </div>
+  //     </div>
+  //
+  //     <div className="row">
+  //       <div className="col-sm-4 offset-md-4 equals-row">
+  //         <div className="equals"></div>
+  //       </div>
+  //     </div>
+  //
+  //     <div className="row">
+  //       <div className="col-sm-4 offset-md-4 product" id="result">
+  //         <input className="product-input" type="text" onChange={handleAnswer}>
+  //           {task.answer}
+  //         </input>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 }
 
 export default Task;

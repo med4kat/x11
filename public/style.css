@@ -53,7 +53,7 @@ main {
 
 
 .math {
-  /*display: flex;
+  display: flex;
   flex-flow: column;
   position: relative;*/
   font-size: calc(1.4rem + 2vh + 4vw);
@@ -64,6 +64,7 @@ main {
     flex-flow: column;
     justify-content: flex-end;
     align-items: flex-end;
+    font-size: calc(1.4rem + 2vh + 4vw);
 }
 
 .task-wrapper {
@@ -96,12 +97,21 @@ main {
 .operator {
   padding-right: 0.2em;
 }
+/*input - how to change sizing? ect */
+input{
+  width:150px;
+  color: #353951;
+  /* display: flex;
+  align-items: flex-end; */
+  display: inline-block;
+  height: 100px
+}
 
-.product-input {
+/*.product-input {
   width: 200px;
   border: none;
   margin-top: 20px;
-}
+}*/
 
 #result {
   color: #7d84b2;
