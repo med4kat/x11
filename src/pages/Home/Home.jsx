@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Task from "./components/Task.jsx";
 
 function Home() {
-
   return (
     <main>
       {/* <!-- navbar --> */}
@@ -39,9 +38,7 @@ function Home() {
         {/* <!--math-task--> */}
         <div className="row math-task-row">
           <Task />
-
-
-          </div>
+        </div>
       </div>
     </main>
   );

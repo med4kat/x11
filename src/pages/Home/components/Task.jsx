@@ -4,6 +4,7 @@ const random = (min = 10, max = 99) => {
   let num = Math.random() * (max - min) + min;
   return Math.floor(num);
 };
+const log = (...args) => console.log(...args);
 
 const myStyle = {
   task: {
@@ -11,39 +12,78 @@ const myStyle = {
   },
 };
 
+interface TaskState {
+  multiplicant: number;
+  multiplier: number;
+  product: number | null | "?";
+  userAnswer: number | null;
+}
+
 function Task() {
-  const [task, setTask] = useState({
-    multiplicant: null,
+  const [task, setTask]: TaskState = useState({
+    multiplicant: 0,
     multiplier: 11,
     product: null,
-    answer: null,
-    isCorrectAnswer: false,
+    userAnswer: undefined,
   });
+  const [answerArr, setAnswerArr] = useState([]);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
 
   /* init state */
   useEffect(() => {
     reset();
   }, []);
 
-  function handleAnswer(e) {
-    e.preventDefault();
-    if (e?.target?.value === undefined) return;
+  function handleKeyDown(e) {
+    let rv;
 
-    let answer = Number(e.target.value);
-    if (isNaN(answer)) return;
-
-    if (answer === task.product) {
-      setTask({ ...task, isCorrectAnswer: true });
-
-      e.target.style.color = "green";
-
-      /* wait a bit and reset the task */
-      let timeoutID = setTimeout(() => {
-        e.target.value = null;
-        e.target.style.color = "#353951";
-        reset(timeoutID);
-      }, 2000);
+    if (e.key === "Backspace") {
+      /* remove last added key */
+      rv = answerArr.slice(0, answerArr.length - 1);
+      setAnswerArr(rv);
+    } else if (isNaN(e.key)) {
+      return;
+    } else {
+      /* store to answer array */
+      rv = [...answerArr, e.key];
+      setAnswerArr(rv);
     }
+
+    /* compute user's answer */
+    const userAnswer = Number(rv.join(""));
+
+    /* show it to user */
+    setTask({ ...task, userAnswer });
+
+    /* check if we have a correct answer */
+    if (userAnswer === task.product) {
+      setIsCorrectAnswer(true);
+      const productDiv = document.querySelector(".product");
+      /* lock correct answer */
+
+      /* reset the task */
+      resetTask(productDiv);
+    }
+  }
+
+  /* add listeners */
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [answerArr, task.product, isCorrectAnswer]);
+
+  function resetTask(div) {
+    /* set userAnswer text color to green */
+    div.style.color = "green";
+
+    /* set reset countdown */
+    let timeoutID = setTimeout(() => {
+      /* restore userAnswer text color */
+      div.style.color = "#353951";
+      reset(timeoutID);
+    }, 750);
   }
 
   function reset(timeoutID) {
@@ -57,61 +97,29 @@ function Task() {
       ...task,
       multiplicant,
       product,
-      isCorrectAnswer: false,
+      userAnswer: null,
     });
-  }
-  return (
-    
-    <div className="math-wrapper">
 
+    setAnswerArr([]);
+    setIsCorrectAnswer(false);
+  }
+
+  return (
+    <div className="math-wrapper">
       <section className="task-wrapper">
         <section className="task" style={myStyle.task}>
           <div className="operator">x</div>
-
           <div className="numbers">
-            <div className="multiplicant">{task.multiplicant ?? 0}</div> {/*col-sm-4 offset-md-4*/}
-            <div className="multiplier">{task.multiplier ?? 0}</div> {/*col-sm -4 offset-md-4*/}
-         </div>
+            <div className="multiplicant">{task.multiplicant ?? 0}</div>{" "}
+            <div className="multiplier">{task.multiplier ?? 0}</div>{" "}
+          </div>
         </section>
       </section>
       <section className="product-wrapper">
-        {/* <div className="product" id="result">?</div> */}
-        <input className="product" id="result" type="text" onChange={handleAnswer}>
-          {task.answer}
-        </input>
+        <div className="product">{task.userAnswer ?? "?"}</div>
       </section>
     </div>
-
-  )
-  // return (
-  //   <div className="col-md-6 offset-md-3 task" style={myStyle.task}>
-  //     <div className="row">
-  //       <div className="col-sm-4 offset-md-4 multiplicant">
-  //         {task.multiplicant ?? 0}
-  //       </div>
-  //     </div>
-  //
-  //     <div className="row">
-  //       <div className="col-sm-4 offset-md-4 multiplier">
-  //         x {task.multiplier ?? 0}
-  //       </div>
-  //     </div>
-  //
-  //     <div className="row">
-  //       <div className="col-sm-4 offset-md-4 equals-row">
-  //         <div className="equals"></div>
-  //       </div>
-  //     </div>
-  //
-  //     <div className="row">
-  //       <div className="col-sm-4 offset-md-4 product" id="result">
-  //         <input className="product-input" type="text" onChange={handleAnswer}>
-  //           {task.answer}
-  //         </input>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
+  );
 }
 
 export default Task;
