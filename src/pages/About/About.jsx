@@ -19,7 +19,8 @@ function About() {
       </nav>
 
       <div className="container-fluid">
-        {/* <!--math-task--> */}
+
+        {/* <!--About--> */}
         <div className="row">
           <div className="col-md-6 offset-md-3 h1" id="about">
             About Multiply By 11 Trainer
