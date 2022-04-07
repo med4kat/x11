@@ -79,15 +79,100 @@ main {
   padding-right: 0.2em;
 }
 
-#result {
-  color: #7d84b2;
+/*Example*/
+
+.example_task, .example_product,
+.example_first_digit, .example_second_digit,
+ .example_sum, .example_sum_product {
+  /*border: 1px solid red;*/
+  display: inline-flex;
 }
 
+.example_wrapper {
+  /*border: 1px solid red;*/
+  width: 100px;
+  margin: 0 auto;
+}
+
+/*animation*/
+.example_product {
+  animation: result 5s infinite; /*start after Step_2*/
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+@keyframes result {
+   0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.example_sum_product {
+  margin-left: 5px;
+  font-weight: bold;
+  color: #6E9F13;
+  animation: result 5s infinite;/*start after Step_1*/
+}
+
+.example_first_digit {
+  animation: first_digit 5s infinite;
+}
+
+@keyframes first_digit {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    transform: translate(0, 0);
+
+  }
+  100% {
+    transform: translate(-20px);
+  }
+}
+
+.example_second_digit {
+  animation: second_digit 5s infinite;
+}
+
+@keyframes second_digit {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20px);
+  }
+}
+
+/*end of animation*/
+
+#Example,  #Step_1, #Step_2 {
+  text-align: center;
+}
+
+/*end of example*/
+
 #about,
-#how_it_works {
-  margin: calc(1.5em + 1vh) auto calc(0.75em + 0.5vh) auto;
+#how_it_works,
+#Example_title {
+  margin: calc(0.5em + 1vh) auto calc(0.75em + 0.5vh) auto;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   font-family: sans-serif;
+}
+
+#result {
+  color: #7d84b2;
 }

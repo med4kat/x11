@@ -30,8 +30,7 @@ function About() {
         <div className="row">
           <div className="col-md-6 offset-md-3 p">
             Multiply By 11 Trainer is a web app for learning and practicing
-            mental mutliplication by 11. The Trainer generates double, triple
-            and quadruple digits to multiply by 11.
+            mental mutliplication by 11. The Trainer generates double digits to multiply by 11.
           </div>
         </div>
 
@@ -43,16 +42,50 @@ function About() {
 
         <div className="row">
           <div className="col-md-6 offset-md-3 p">
-            To multiply any two-digit number by 11, add the digits of the number
-            together and then put this sum between the original two digits.
-            <br />
-            <br />
-            To multiply any 3-or-more-digit number by 11, add up the various
-            pairs of neighboring numbers in the original number, and then stick
-            the results between the 2 outside digits of the original number
-            while removing the inside number(s).
+            To multiply any two-digit number by 11, add the digits of the number together and then put this sum between the original two digits.
           </div>
         </div>
+
+        {/* <!--Example--> */}
+
+        <div className="row">
+          <div className="col-md-6 offset-md-3 h1" id="Example_title">
+              Example
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6 offset-md-3 p" id="Example">
+            <div className="example_task"> 25 x 11 =  </div>
+            <div className="example_product"> 275 </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6 offset-md-3 p" id="Step_1">
+          First step:
+          <div className="example_wrapper">
+          <div className="example_sum"> 2 + 5 = </div>
+          <div className="example_sum_product"> 7 </div>
+          </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6 offset-md-3 p" id="Step_2">
+          Second Step:
+            <div className="example_wrapper">
+            <div className="example_first_digit"> 2 </div>
+            <div className="example_second_digit"> 5 </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
       </div>
     </main>
   );
