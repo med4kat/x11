@@ -76,8 +76,8 @@ function About() {
           Second Step:
             <div className="example_wrapper">
             <div className="example_first_digit"> 2 </div>
+            <div className="example_sum_product"> 7 </div>
             <div className="example_second_digit"> 5 </div>
-
             </div>
           </div>
         </div>

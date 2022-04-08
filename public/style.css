@@ -88,14 +88,19 @@ main {
   display: inline-flex;
 }
 
+.example_sum {
+  margin-right: 5px;
+}
+
 .example_wrapper {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   width: 100px;
   margin: 0 auto;
 }
 
 /*animation*/
 .example_product {
+  /* border: 1px solid blue; */
   animation: result 5s infinite; /*start after Step_2*/
   margin-left: 5px;
   font-weight: bold;
@@ -116,13 +121,15 @@ main {
 }
 
 .example_sum_product {
-  margin-left: 5px;
+  /* border: 1px solid blue; */
+  /*margin-left: 5px;*/
   font-weight: bold;
   color: #6E9F13;
   animation: result 5s infinite;/*start after Step_1*/
 }
 
 .example_first_digit {
+  /* border: 1px solid blue; */
   animation: first_digit 5s infinite;
 }
 
@@ -135,11 +142,12 @@ main {
 
   }
   100% {
-    transform: translate(-20px);
+    transform: translate(-10px);
   }
 }
 
 .example_second_digit {
+  /* border: 1px solid blue; */
   animation: second_digit 5s infinite;
 }
 
@@ -151,7 +159,7 @@ main {
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(20px);
+    transform: translate(10px);
   }
 }
 
