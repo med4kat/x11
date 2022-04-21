@@ -4,7 +4,7 @@ const random = (min = 10, max = 99) => {
   let num = Math.random() * (max - min) + min;
   return Math.floor(num);
 };
-const log = (...args) => console.log(...args);
+// const log = (...args) => console.log(...args);
 
 const myStyle = {
   task: {
@@ -32,7 +32,7 @@ function Task() {
   /* init state */
   useEffect(() => {
     reset();
-  }, []);
+  }, [reset]);
 
   function handleKeyDown(e) {
     let rv;
@@ -72,7 +72,7 @@ function Task() {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [answerArr, task.product, isCorrectAnswer]);
+  }, [answerArr, task.product, isCorrectAnswer, handleKeyDown]);
 
   function resetTask(div) {
     /* set userAnswer text color to green */
