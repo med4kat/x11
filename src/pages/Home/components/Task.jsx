@@ -30,9 +30,7 @@ function Task() {
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
 
   /* init state */
-  useEffect(() => {
-    reset();
-  }, [reset]);
+  useEffect(() => { reset();}, []);
 
   function handleKeyDown(e) {
     let rv;
