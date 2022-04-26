@@ -6,7 +6,7 @@ function About() {
     <main>
       {/* <!-- navbar --> */}
       <nav className="navbar navbar-light">
-        <span className="navbar-brand mb-0 h1">MULTIPLY BY 11</span>
+        <span className="navbar-brand mb-0 h1 title">MULTIPLY BY 11</span>
         <span className="navbar-brand mb-0 h1">
           <Link
             className="navbar-brand"
@@ -34,6 +34,8 @@ function About() {
           </div>
         </div>
 
+        {/* <!--How it works--> */}
+
         <div className="row">
           <div className="col-md-6 offset-md-3 h1" id="how_it_works">
             How It Works
@@ -56,8 +58,7 @@ function About() {
 
         <div className="row">
           <div className="col-md-6 offset-md-3 p" id="Example">
-            <div className="example_task"> 25 x 11 =  </div>
-            <div className="example_product"> 275 </div>
+            <div className="example_task"> 25 x 11  </div>
           </div>
         </div>
 
@@ -66,7 +67,7 @@ function About() {
           First step:
           <div className="example_wrapper">
           <div className="example_sum"> 2 + 5 = </div>
-          <div className="example_sum_product"> 7 </div>
+          <div className="example_sum_product" > 7 </div>
           </div>
           </div>
         </div>
@@ -76,16 +77,11 @@ function About() {
           Second Step:
             <div className="example_wrapper">
             <div className="example_first_digit"> 2 </div>
-            <div className="example_sum_product"> 7 </div>
+            <div className="example_sum_product" id="between"> 7 </div>
             <div className="example_second_digit"> 5 </div>
             </div>
           </div>
         </div>
-
-
-
-
-
       </div>
     </main>
   );

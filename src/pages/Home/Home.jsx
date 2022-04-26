@@ -7,7 +7,7 @@ function Home() {
     <main>
       {/* <!-- navbar --> */}
       <nav className="navbar navbar-light">
-        <span className="navbar-brand mb-0 h1">MULTIPLY BY 11</span>
+        <span className="navbar-brand mb-0 h1 title">MULTIPLY BY 11</span>
         <span className="navbar-brand mb-0 h1">
 
           <Link className="navbar-brand" to="/about">
